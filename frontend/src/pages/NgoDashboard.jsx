@@ -203,7 +203,8 @@ export default function NgoDashboard() {
     setSidebarCollapsed(val);
     localStorage.setItem('ngo_sidebar_collapsed', String(val));
   };
-  
+
+  // verify scanner
   // Verification Scanner States
   const [scannerOpen, setScannerOpen] = useState(false);
   const [verifyTab, setVerifyTab] = useState('scan');
@@ -2039,3 +2040,5 @@ export default function NgoDashboard() {
     </div>
   );
 }
+
+
