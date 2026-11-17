@@ -4,7 +4,6 @@ import { useAuth } from '../hooks/useAuth';
 import api from '../api/axios';
 import { showToast } from '../components/Toast';
 import { Html5QrcodeScanner } from 'html5-qrcode';
-
 import { useWallet } from '../context/WalletContext';
 import { ethers } from 'ethers';
 import RatingModal from '../components/RatingModal';
@@ -246,7 +245,6 @@ export default function NgoDashboard() {
     }
   }, []);
 
-  // Used for manual refreshes (refresh button, post-submit reload)
   const fetchData = useCallback(async () => {
     setLoading(true);
     try {
@@ -406,7 +404,7 @@ export default function NgoDashboard() {
       setVerifying(false);
     }
   };
-
+// verify the Request fullfilment
   const handleVerifyRequestFulfillment = async (requestId, token) => {
     setVerifying(true);
     try {
@@ -461,7 +459,6 @@ export default function NgoDashboard() {
     }
   };
 
-  // Initial load — inlined to satisfy React Compiler (no external setState call in effect body)
   useEffect(() => {
     let active = true;
     (async () => {

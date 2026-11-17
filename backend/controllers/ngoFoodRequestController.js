@@ -106,7 +106,7 @@ const createNgoFoodRequest = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("Please describe the purpose of this food request.");
   }
-// generating the Unicode for verification at the time of the pickup 
+// generating the Unicode for verification at the time of the pickup  
   const generateUniqueRequestToken = async () => {
     let token;
     let exists = true;
@@ -426,7 +426,7 @@ const acceptNgoFoodRequest = asyncHandler(async (req, res) => {
     request
   });
 });
-
+// VerifyNgo full Request verify the Unicode or Qr code 
 const verifyNgoFoodRequestFulfillment = asyncHandler(async (req, res) => {
   const { id } = req.params;
   const { token } = req.body;
