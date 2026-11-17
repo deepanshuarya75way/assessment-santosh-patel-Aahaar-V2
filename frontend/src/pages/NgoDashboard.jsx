@@ -4,6 +4,7 @@ import { useAuth } from '../hooks/useAuth';
 import api from '../api/axios';
 import { showToast } from '../components/Toast';
 import { Html5QrcodeScanner } from 'html5-qrcode';
+
 import { useWallet } from '../context/WalletContext';
 import { ethers } from 'ethers';
 import RatingModal from '../components/RatingModal';
@@ -1524,7 +1525,7 @@ export default function NgoDashboard() {
                           <div>Email: <strong>{donorEmail}</strong></div>
                         </div>
 
-                        {/* Verify pickup — NGO asks the donor for the code, no code shown here */}
+                        {/* Verify pickup  Vrify by the Qr code or unicode  */}
                         {isAccepted && (
                           <div style={{ marginTop: 12, padding: '10px 14px', background: 'rgba(6,182,212,0.04)', border: '1px solid rgba(6,182,212,0.15)', borderRadius: 8, fontSize: '0.82rem', color: 'var(--text-secondary)' }}>
                             💡 Ask the donor to show their <strong style={{ color: 'var(--color-teal)' }}>Pickup Pass</strong> (QR or 6-digit code). Scan or enter it below to verify.

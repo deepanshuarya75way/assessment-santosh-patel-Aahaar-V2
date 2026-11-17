@@ -119,7 +119,9 @@ export default function DonorDashboard() {
     }
   }, []);
 
-  const fetchNgoRequestsData = useCallback(async () => {
+  const fetchNgoRe
+  
+  questsData = useCallback(async () => {
     try {
       const activeRes = await api.get('/aahar/ngo-food-requests/active');
       setActiveRequests(activeRes.data?.requests || []);
@@ -1122,7 +1124,7 @@ export default function DonorDashboard() {
           </div>
         )}
 
-        {/* Open NGO Food Requests Section */}
+        {/* NGO food request Section */}
         {!loading && (
           <div className="dashboard-section" style={{ marginTop: 28 }}>
             <div className="dashboard-section__header">

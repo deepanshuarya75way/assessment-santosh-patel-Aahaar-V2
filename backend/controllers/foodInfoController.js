@@ -236,7 +236,7 @@ const deleteFoodInfo=asyncHandler(async(req ,res)=>{
     }
     return res.status(200).json({message:"Food info deleted successfully"});
 })
-
+// verify the donations
 const verifyDonationPickup = asyncHandler(async (req, res) => {
     const { id } = req.params;
     const { token } = req.body;
@@ -308,7 +308,7 @@ const verifyDonationPickup = asyncHandler(async (req, res) => {
     // Trigger Section 80G PDF receipt compilation and email transmission
     generateAndEmailReceipt(donation);
 
-    // Mark the corresponding NgoFoodRequest as completed (fulfilled)
+    // Mark the corresponding NgoFoodRequest as completed (fulfilled)..
     if (donation.verificationToken) {
         const request = await NgoFoodRequest.findOne({ verificationToken: donation.verificationToken.toUpperCase() });
         if (request && request.status !== 'fulfilled' && request.status !== 'COMPLETED') {
